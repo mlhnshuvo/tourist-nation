@@ -1,11 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from "prop-types";
 import SearchBtn from "../../assets/images/search-btn.svg";
 
-function TopPopUpHeader() {
+function TopPopUpHeader({ popUpHandler }) {
   return (
     <div className="toppopupheader">
       <div className="toppopupheader-menus">
-        <p className="toppopupheader-menu-item">Home Page</p>
+        <p className="toppopupheader-menu-item toppopupheader-menu-item__active">
+          Home Page
+        </p>
         <p className="toppopupheader-menu-item">Landing Page</p>
         <p className="toppopupheader-menu-item">Contact Us</p>
       </div>
@@ -29,13 +34,17 @@ function TopPopUpHeader() {
             <p className="toppopupheader-filter-location-name">Travellers</p>
             <p className="toppopupheader-filter-location-areaname">None</p>
           </div>
-          <div>
+          <Link to="/searchresult" onClick={popUpHandler}>
             <img src={SearchBtn} alt="" />
-          </div>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
+
+TopPopUpHeader.propTypes = {
+  popUpHandler: PropTypes.func.isRequired,
+};
 
 export default TopPopUpHeader;

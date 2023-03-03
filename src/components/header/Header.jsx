@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import TopPopUpHeader from "./TopPopUpHeader";
 import TopPopUp from "./TopPopUp";
 import HeaderMenu from "./HeaderMenu";
@@ -8,7 +9,7 @@ import User from "../../assets/images/user.svg";
 import World from "../../assets/images/world.svg";
 
 function Header() {
-  const [topPopUp, setTopPopUp] = useState(true);
+  const [topPopUp, setTopPopUp] = useState(false);
 
   const popUpHandler = () => {
     setTopPopUp(!topPopUp);
@@ -17,11 +18,11 @@ function Header() {
   return (
     <div className="header-wrapper">
       <div className="header">
-        <div className="header-logo">
+        <Link to="/" className="header-logo">
           <img src={Logo} alt="" />
-        </div>
+        </Link>
         {topPopUp ? (
-          <TopPopUpHeader />
+          <TopPopUpHeader popUpHandler={popUpHandler} />
         ) : (
           <HeaderMenu popUpHandler={popUpHandler} />
         )}

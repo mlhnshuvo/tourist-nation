@@ -20,7 +20,9 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
   .toppopup {
-    inset: 150px 0 100px 0;
+    inset: 250px 0 50px 0;
+    flex-wrap: wrap;
+    width: 100%;
   }
   .item-card-img {
     width: 42%;
@@ -45,10 +47,6 @@
   .header-setting {
     justify-content: center;
     gap: 5px;
-  }
-  .toppopup {
-    flex-wrap: wrap;
-    inset: 190px 0 100px 0;
   }
   .toppopup-prev {
     width: 100%;
