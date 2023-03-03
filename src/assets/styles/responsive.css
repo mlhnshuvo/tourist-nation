@@ -15,6 +15,15 @@
   .item-card-review {
     margin-top: 10px;
   }
+  .searchresult {
+    flex-wrap: wrap;
+  }
+  .searchresult-map {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    margin-top: 20px;
+    height: 100vh;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
