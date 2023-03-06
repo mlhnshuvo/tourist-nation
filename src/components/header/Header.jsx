@@ -31,10 +31,10 @@ function Header() {
           <div>
             <img src={World} alt="" />
           </div>
-          <div className="header-setting-user">
+          <Link to="/signin" className="header-setting-user">
             <img src={Bar3} alt="" className="header-setting-user-item" />
             <img src={User} alt="" className="header-setting-user-item" />
-          </div>
+          </Link>
         </div>
       </div>
       {topPopUp && <TopPopUp popUpHandler={popUpHandler} />}

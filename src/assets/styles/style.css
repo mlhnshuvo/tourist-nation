@@ -276,3 +276,111 @@ body {
   margin-top: 150px;
   padding: 0 20px 0 0;
 }
+
+/* sing up */
+/* common */
+.sign-btn {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* common end */
+.signup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 32px;
+  flex-wrap: wrap;
+}
+
+.signup-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #344054;
+}
+
+.signup-des {
+  line-height: 24px;
+  color: #667085;
+  margin-top: 8px;
+}
+.signup-form {
+  margin-top: 15px;
+}
+.signup-label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+
+.signup-form-input {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  outline: 0;
+  height: 30px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.signup-form__remember-forgot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.signup-form__remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.signup-form-input-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.signup-form__forgot {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #00ca8a;
+  cursor: pointer;
+}
+.sign-btn__signup {
+  background: #00ca8a;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+.sign-btn__google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.signup-form__already {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.signup-form__already-account {
+  color: #344054;
+}
+.signup-form__signin {
+  color: #00ca8a;
+  cursor: pointer;
+}
