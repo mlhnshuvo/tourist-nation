@@ -412,13 +412,13 @@ body {
   cursor: pointer;
 }
 .signup-img {
-  width: 50%;
+  width: 40%;
 }
 
 /* modal */
 .modal {
   position: fixed;
-  inset: 50px 0 10px 0;
+  inset: 10px 0 auto 0;
   width: 70%;
   margin: auto;
   background: #ffffff;

@@ -28,10 +28,12 @@ function Header() {
 
   const modalHandler = () => {
     setOpanModal(!opanModal);
+    setDropdown(false);
   };
 
   const loginSelectHandler = (value) => {
     setSignSelect(value);
+    setDropdown(false);
   };
 
   return (
