@@ -7,10 +7,13 @@ import World from "../../assets/images/world.svg";
 import HeaderMenu from "./HeaderMenu";
 import TopPopUp from "./TopPopUp";
 import TopPopUpHeader from "./TopPopUpHeader";
+import Modal from "../Modal";
+import Signin from "../auth/Signi";
 
 function Header() {
   const [topPopUp, setTopPopUp] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [opanModal, setOpanModal] = useState(false);
 
   const popUpHandler = () => {
     setTopPopUp(!topPopUp);
@@ -18,6 +21,10 @@ function Header() {
 
   const dropDownHandler = () => {
     setDropdown(!dropdown);
+  };
+
+  const modalHandler = () => {
+    setOpanModal(!opanModal);
   };
 
   return (
@@ -52,9 +59,16 @@ function Header() {
               <Link to="/" className="header-setting-user-dropdown-li">
                 My bookings
               </Link>
-              <Link to="/signin" className="header-setting-user-dropdown-li">
-                Login
+              <Link to="/" className="header-setting-user-dropdown-li">
+                Logout
               </Link>
+              <p
+                className="header-setting-user-dropdown-li"
+                onClick={modalHandler}
+                aria-hidden
+              >
+                Login
+              </p>
               <p
                 className="header-setting-user-dropdown-bg-opacity"
                 onClick={dropDownHandler}
@@ -65,6 +79,11 @@ function Header() {
         </div>
       </div>
       {topPopUp && <TopPopUp popUpHandler={popUpHandler} />}
+      {opanModal && (
+        <Modal modalHandler={modalHandler}>
+          <Signin />
+        </Modal>
+      )}
     </div>
   );
 }

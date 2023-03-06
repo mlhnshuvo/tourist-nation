@@ -43,6 +43,15 @@
     width: 100%;
     border: 1px solid #efefef;
   }
+  .signup{
+    flex-wrap: wrap;
+  }
+  .signup-img {
+    width: 100%;
+  }
+  .signup-left {
+    width: 100%;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

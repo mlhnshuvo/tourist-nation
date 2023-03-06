@@ -6,7 +6,7 @@ import Google from "../../assets/images/google.svg";
 function SignIn() {
   return (
     <div className="signup">
-      <div>
+      <div className="signup-left">
         <p className="signup-title">Log In</p>
         <p className="signup-des">
           Please fill your detail to access your account.
@@ -52,9 +52,7 @@ function SignIn() {
           </Link>
         </div>
       </div>
-      <div>
-        <img src={SignImg1} alt="" />
-      </div>
+      <img src={SignImg1} alt="" className="signup-img" />
     </div>
   );
 }
