@@ -17,9 +17,11 @@ function TopPopUpHeader({ popUpHandler }) {
       <div className="toppopupheader-filter">
         <div className="toppopupheader-filter-location">
           <p className="toppopupheader-filter-location-name">Location</p>
-          <p className="toppopupheader-filter-location-areaname">
-            Manali, Himachal pradesh
-          </p>
+          <input
+            type="text"
+            className="toppopupheader-filter-location-areaname"
+            placeholder=" Manali, Himachal pradesh"
+          />
         </div>
         <div className="toppopupheader-filter-fromtobtn">
           <div>

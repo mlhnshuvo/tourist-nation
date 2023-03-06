@@ -19,6 +19,7 @@ function Header() {
 
   const popUpHandler = () => {
     setTopPopUp(!topPopUp);
+    setDropdown(false);
   };
 
   const dropDownHandler = () => {
