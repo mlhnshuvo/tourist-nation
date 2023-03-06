@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "react-router-dom";
-import SignImg1 from "../../assets/images/sign2img.svg";
 import Google from "../../assets/images/google.svg";
+import SignImg1 from "../../assets/images/sign2img.svg";
+// eslint-disable-next-line import/no-extraneous-dependencies
 
-function SignIn() {
+function SignIn({ loginSelectHandler }) {
   return (
     <div className="signup">
       <div className="signup-left">
@@ -47,9 +48,13 @@ function SignIn() {
           <p className="signup-form__already-account">
             Don’t have an account? Sign up
           </p>
-          <Link to="/signup" className="signup-form__signin">
+          <div
+            onClick={() => loginSelectHandler("signup")}
+            aria-hidden
+            className="signup-form__signin"
+          >
             Sign up
-          </Link>
+          </div>
         </div>
       </div>
       <img src={SignImg1} alt="" className="signup-img" />
@@ -58,3 +63,7 @@ function SignIn() {
 }
 
 export default SignIn;
+
+SignIn.propTypes = {
+  loginSelectHandler: PropTypes.func.isRequired,
+};

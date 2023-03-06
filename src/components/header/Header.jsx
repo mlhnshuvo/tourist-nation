@@ -4,16 +4,18 @@ import Bar3 from "../../assets/images/bar3.svg";
 import Logo from "../../assets/images/logo.svg";
 import User from "../../assets/images/user.svg";
 import World from "../../assets/images/world.svg";
+import Signin from "../auth/Signi";
+import Signup from "../auth/Signup";
+import Modal from "../Modal";
 import HeaderMenu from "./HeaderMenu";
 import TopPopUp from "./TopPopUp";
 import TopPopUpHeader from "./TopPopUpHeader";
-import Modal from "../Modal";
-import Signin from "../auth/Signi";
 
 function Header() {
   const [topPopUp, setTopPopUp] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [opanModal, setOpanModal] = useState(false);
+  const [signSelect, setSignSelect] = useState("signin");
 
   const popUpHandler = () => {
     setTopPopUp(!topPopUp);
@@ -25,6 +27,10 @@ function Header() {
 
   const modalHandler = () => {
     setOpanModal(!opanModal);
+  };
+
+  const loginSelectHandler = (value) => {
+    setSignSelect(value);
   };
 
   return (
@@ -79,11 +85,16 @@ function Header() {
         </div>
       </div>
       {topPopUp && <TopPopUp popUpHandler={popUpHandler} />}
-      {opanModal && (
-        <Modal modalHandler={modalHandler}>
-          <Signin />
-        </Modal>
-      )}
+      {opanModal
+        && (signSelect === "signin" ? (
+          <Modal modalHandler={modalHandler}>
+            <Signin loginSelectHandler={loginSelectHandler} />
+          </Modal>
+        ) : (
+          <Modal modalHandler={modalHandler}>
+            <Signup loginSelectHandler={loginSelectHandler} />
+          </Modal>
+        ))}
     </div>
   );
 }

@@ -1,12 +1,12 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "react-router-dom";
-import SignImg1 from "../../assets/images/sign1img.svg";
 import Google from "../../assets/images/google.svg";
+import SignImg1 from "../../assets/images/sign1img.svg";
 
-function Signup() {
+function Signup({ loginSelectHandler }) {
   return (
     <div className="signup">
-      <div>
+      <div className="signup-left">
         <p className="signup-title">SignUp</p>
         <p className="signup-des">
           Please fill your detail to create your account.
@@ -61,14 +61,22 @@ function Signup() {
           <p className="signup-form__already-account">
             Already have an account?
           </p>
-          <Link to="/signin" className="signup-form__signin">Sign in</Link>
+          <div
+            onClick={() => loginSelectHandler("signin")}
+            aria-hidden
+            className="signup-form__signin"
+          >
+            Sign In
+          </div>
         </div>
       </div>
-      <div>
-        <img src={SignImg1} alt="" />
-      </div>
+      <img src={SignImg1} alt="" className="signup-img" />
     </div>
   );
 }
 
 export default Signup;
+
+Signup.propTypes = {
+  loginSelectHandler: PropTypes.func.isRequired,
+};
