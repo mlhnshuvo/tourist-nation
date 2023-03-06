@@ -7,13 +7,13 @@ import SearchBtn from "../../assets/images/search-btn.svg";
 function TopPopUpHeader({ popUpHandler }) {
   return (
     <div className="toppopupheader">
-      <div className="toppopupheader-menus">
+      {/* <div className="toppopupheader-menus">
         <p className="toppopupheader-menu-item toppopupheader-menu-item__active">
           Home Page
         </p>
         <p className="toppopupheader-menu-item">Landing Page</p>
         <p className="toppopupheader-menu-item">Contact Us</p>
-      </div>
+      </div> */}
       <div className="toppopupheader-filter">
         <div className="toppopupheader-filter-location">
           <p className="toppopupheader-filter-location-name">Location</p>

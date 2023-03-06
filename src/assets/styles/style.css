@@ -83,6 +83,29 @@ body {
   justify-content: space-between;
   cursor: pointer;
 }
+.header-setting-user-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 90px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: grid;
+}
+.header-setting-user-dropdown-li {
+  padding: 20px;
+  cursor: pointer;
+  background: #efefef;
+  border-bottom: 1px solid #e5e7eb;
+}
+.header-setting-user-dropdown-bg-opacity {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+.header-setting-user-dropdown-li:hover {
+  background: #ffffff;
+}
 
 /* items */
 .items {

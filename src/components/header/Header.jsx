@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import TopPopUpHeader from "./TopPopUpHeader";
-import TopPopUp from "./TopPopUp";
-import HeaderMenu from "./HeaderMenu";
 import Bar3 from "../../assets/images/bar3.svg";
 import Logo from "../../assets/images/logo.svg";
 import User from "../../assets/images/user.svg";
 import World from "../../assets/images/world.svg";
+import HeaderMenu from "./HeaderMenu";
+import TopPopUp from "./TopPopUp";
+import TopPopUpHeader from "./TopPopUpHeader";
 
 function Header() {
   const [topPopUp, setTopPopUp] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   const popUpHandler = () => {
     setTopPopUp(!topPopUp);
+  };
+
+  const dropDownHandler = () => {
+    setDropdown(!dropdown);
   };
 
   return (
@@ -31,10 +36,32 @@ function Header() {
           <div>
             <img src={World} alt="" />
           </div>
-          <Link to="/signin" className="header-setting-user">
+          <div
+            className="header-setting-user"
+            onClick={dropDownHandler}
+            aria-hidden
+          >
             <img src={Bar3} alt="" className="header-setting-user-item" />
             <img src={User} alt="" className="header-setting-user-item" />
-          </Link>
+          </div>
+          {dropdown && (
+            <div className="header-setting-user-dropdown">
+              <Link to="/" className="header-setting-user-dropdown-li">
+                My profile
+              </Link>
+              <Link to="/" className="header-setting-user-dropdown-li">
+                My bookings
+              </Link>
+              <Link to="/signin" className="header-setting-user-dropdown-li">
+                Login
+              </Link>
+              <p
+                className="header-setting-user-dropdown-bg-opacity"
+                onClick={dropDownHandler}
+                aria-hidden
+              />
+            </div>
+          )}
         </div>
       </div>
       {topPopUp && <TopPopUp popUpHandler={popUpHandler} />}
